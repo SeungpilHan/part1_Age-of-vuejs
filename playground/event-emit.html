@@ -34,7 +34,7 @@
       }
     }
   
-    new Vue({
+    var vm = new Vue({
       el: '#app',
       components: {
         'app-header': appHeader,
@@ -45,7 +45,7 @@
           console.log('hi')
           this.num
         },
-        increaseNumber: function() {
+        increaseNumber: function() {  //funtion = 함수
           this.num = this.num + 1;
 
         }
