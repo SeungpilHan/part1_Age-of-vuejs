@@ -7,7 +7,9 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="app"></div>
+  <div id="app">
+    <router-view></router-view>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
@@ -17,12 +19,14 @@
     }
 
     var MainComponent = {
-      template: '<div>url</div>'
+      template: '<div>main</div>'
     }
 
+    //라우터(네트워크에서 데이터의 전달을 촉진하는 중계 장치)
     var router = new VueRouter({
       //페이지의 라우팅 정보
       routes: [
+        // 로그인 페이지 정보
         {
           //페이지의 url 이름
           path: '/login',
@@ -30,8 +34,8 @@
           component: LoginComponent
         },
         {
-
-          path: '/url',
+          // 메인 페이지 정보
+          path: '/main',
           component: MainComponent
         }
       ]
