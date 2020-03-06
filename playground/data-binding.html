@@ -8,8 +8,17 @@
 </head>
 <body>
   <div id="app">
-    <p>{{ num }}</p>
+    <p v-bind:id="uuid" v-bind:class="name">{{ num }}</p>
     <p>{{ doubleNum }}</p>
+    <div v-if="Loading">
+      Loading...
+    </div>
+    <div v-else>
+      test user has been logged in
+    </div>
+    <div v-show="Loading">
+      Loading...
+    </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -18,7 +27,9 @@
       el: '#app',
       data: {
         num: 10,
-        doubleNum: 10 * 2
+        uuid: 'abc1234',
+        name: 'text-blue',
+        Loading: true
       },
       computed: {
         doubleNum: function() {
